@@ -102,7 +102,7 @@ describe('2. express', () => {
     }
   })
 
-  it('2.5 avoid handle something other than POST request', async (t) => {
+  it('2.6 avoid handle something other than POST request', async (t) => {
     const data = {
       name: 'midudev',
       email: 'midudev@gmail.com',
