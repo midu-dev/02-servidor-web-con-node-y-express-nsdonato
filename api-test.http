@@ -3,10 +3,38 @@ content-type: application/json
 
 ###
 
-GET http://localhost:1234/404 HTTP/1.1
+POST http://localhost:1234/ HTTP/1.1
 content-type: application/json
 
 ###
 
 GET http://localhost:1234/logo.webp HTTP/1.1
 content-type: application/json
+
+###
+
+GET http://localhost:1234/404 HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:1234/contacto HTTP/1.1
+content-type: application/json
+
+{
+    "name": "midudev",
+    "email": "midudev@gmail.com",
+    "message": "Hola mundo"
+}
+
+
+###
+
+PUT http://localhost:1234/contacto HTTP/1.1
+content-type: application/json
+
+{
+    "name": "midudev",
+    "email": "midudev@gmail.com",
+    "message": "Hola mundo"
+}
