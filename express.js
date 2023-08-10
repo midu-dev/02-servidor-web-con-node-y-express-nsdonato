@@ -23,8 +23,6 @@ function startServer() {
   })
 
   app.all('/contacto', (req, res) => {
-    console.log(req.body)
-    console.log(req.method)
     if (req.method === 'POST') return res.status(201).json(req.body)
     return res.status(405).end()
   })
@@ -50,7 +48,6 @@ function startServer() {
   return server
 }
 
-startServer()
 module.exports = {
   startServer
 }

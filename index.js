@@ -1,7 +1,7 @@
 const http = require('node:http')
 const fs = require('node:fs')
 
-function startServer () {
+function startServer() {
   const PORT = process.env.PORT ?? 1234
 
   const processRequest = (req, res) => {
@@ -49,6 +49,17 @@ function startServer () {
           res.end('405 Method Not Allowed')
         }
         break
+      default:
+        if (url === '/contacto' || url === '/' || url === '/logo.webp') {
+          res.setHeader('Content-Type', 'text/plain; charset=utf-8')
+          res.statusCode = 405
+          res.end('405 Method Not Allowed')
+          return
+        }
+
+        res.statusCode = 404
+        res.end('404 Not Found')
+        break
     }
   }
 
@@ -60,7 +71,6 @@ function startServer () {
 
   return server
 }
-
 module.exports = {
   startServer
 }
